@@ -8,14 +8,26 @@ package deposito;
 public class CCuenta {
 
 
-    private String nombre;
-    private String cuenta;
-    private double saldo;
-    private double tipoInteres;
+    private String nombre;      //Nombre del titular de la cuenta
+    private String cuenta;      //Numero de cuenta
+    private double saldo;       //Saldo actual de la cuenta
+    private double tipoInteres; //Tipo de interes asociado a la cuenta
 
+    /**
+     * Constructor por defecto de la clase Ccuenta.
+     */
+    
     public CCuenta(){
     }
 
+    /**
+     * 
+     * @param nom   Nombre del titular de la cuenta
+     * @param cue   Numero de cuenta
+     * @param sal   Saldo actual de la cuenta
+     * @param tipo  Tipo de interes asociado a la cuenta
+     */
+    
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -24,11 +36,24 @@ public class CCuenta {
         tipoInteres= tipo;
     }
 
+    /**
+     * Metodo para obtener el estado actual de la cuenta.
+     * 
+     * @return El saldo actual de la cuenta.
+     */
+    
     public double estado()
     {
         return saldo;
     }
 
+    /**
+     * Metodo para ingresar una cantidad en la cuenta.
+     * 
+     * @param cantidad    Cantidad a ingresar en la cuenta.
+     * @throws Exception  Si la cantidad es negativa.
+     */
+    
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -36,6 +61,13 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Metodo para retirar una cantidad de la cuenta.
+     * 
+     * @param cantidad      Cantidad a retirar de la cuenta.
+     * @throws Exception    Si la cantidad es negativa o si no hay suficiente.
+     */
+    
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
